@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 100;
   padding: 20px 0;
   position: absolute;
   top: 0;
@@ -374,24 +374,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav {
   position: fixed;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   z-index: 9999;
   overflow-y: auto;
   background: #fff;
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
-  border-radius: 10px;
-  padding: 10px 0;
-}
+  padding: 20px 20px 20px 10px;
+} 
 
+ 
 .mobile-nav * {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.mobile-nav li {
+  display: block;
+  width: 100%;
 }
 
 .mobile-nav a {
@@ -436,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-overly {
   width: 100%;
   height: 100%;
-  z-index: 9997;
+  z-index: 20;
   top: 0;
   left: 0;
   position: fixed;
@@ -450,11 +457,25 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.mobile-nav-active .mobile-nav {
-  opacity: 1;
-  visibility: visible;
+.nav-menu ul li a:hover {
+  color: #3E64FF;
 }
 
+.mobile-nav-active .nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 55%;
+  width: 400px;
+  background-color: #ffffff;
+  z-index: 150;
+  display: block!important;
+  transition: width 2s;
+}
+.mobile-nav-active .nav-menu ul {
+  display: block!important;
+}
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
@@ -498,9 +519,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: -2px;
   
 } 
-
  
-
 #hero .hero-container {
   position: absolute;
   bottom: 0;
@@ -517,7 +536,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 60px;
+  font-size: 3em;
   font-weight: 900;
   line-height: 56px; 
   color: #000;
@@ -534,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero h2 {
   color: #000;
   margin-bottom: 50px;
-  font-size: 24px;
+  font-size: 1.7em;
   font-weight: 700;
 }
 
@@ -592,11 +611,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media only screen and (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 2.5em;
     line-height: 36px;
   }
   #hero h2 {
-    font-size: 18px;
+    font-size: 1.6em;
     line-height: 24px;
     margin-bottom: 30px;
   }
@@ -625,19 +644,18 @@ h1, h2, h3, h4, h5, h6 {
 
 @media only screen and (max-width: 480px) {
   #hero h1 {
-    font-size: 38px;
+    font-size: 2.2em;
     line-height: 26px;
   }
   #hero h2 {
-    font-size: 20px;
+    font-size: 1.5em;
     line-height: 24px;
     margin-bottom: 30px;
   }
  
 }
 
-.mobile-nav-toggle {
-  z-index: 100;
+.mobile-nav-toggle { 
 }
 
 .mobile-nav-toggle i {
@@ -1021,7 +1039,9 @@ margin-bottom: 40px;
 
 @media only screen and (max-width: 768px) {
 
-
+  #work .content h2 {
+    font-size: 2em;
+  }
 
   #work .row:nth-child(2) {
     display: grid;
@@ -1051,4 +1071,12 @@ margin-bottom: 40px;
 # END responsive
 --------------------------------------------------------------*/
 
- 
+@media only screen and (max-width:320px) {
+    
+  #hero h1 {
+      line-height: 48px;
+  }
+  #hero-intro {
+    margin-bottom: 20px;
+  }
+}
